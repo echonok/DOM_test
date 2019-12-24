@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    const createNewElement = (tag, parent = document.body) => {
+      const newElement = document.createElement(tag);
+      parent.appendChild(newElement);
+      return newElement;
+    }
+
+    // Задание 1
+    const newDiv = createNewElement('div');
+    newDiv.textContent = 'Этот элемент создан при помощи DOM API';
+
+    //Задание 2
+    const anotherDiv = createNewElement('div', newDiv);
+    anotherDiv.classList.add('inner');
+    anotherDiv.textContent = 'Этот элемент тоже создан при помощи DOM API';
+
+    //Задание 3
+    anotherDiv.style.color = 'red';
+
+    //Задание 4
+    newDiv.addEventListener('click', () => console.log('Этот текст говорит о том, что я всё сделал правильно'));
+
+    //Задание 5
+    const newA = createNewElement('a');
+    newA.href = 'https://loftschool.com';
+    newA.textContent = 'https://loftschool.com';
+    newA.addEventListener('click', (elem) => {
+      elem.preventDefault();
+      console.log(`Я кликнул на ссылку ${newA.href}`);
+    });
+
+    //Задание 6
+    const newButton = createNewElement('button');
+    newButton.textContent = 'новая';
+    const newInput = createNewElement('input');
+    newButton.addEventListener('click', () => console.log(newInput.value));
+
+    //Задание 7
+    
+  </script>
+</body>
+</html>

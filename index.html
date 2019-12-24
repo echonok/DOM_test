@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <li id="list"></li>
+</head>
+<body>
+  <div id="container">
+    <div class="hello">Привет</div>
+    <a href="#">Перейти на сайт</a>
+    <button id='myButton'>Жмякай</button>
+    <input type="text" placeholder="phone" id="phone">
+  </div>
+  <script>
+    
+    const elem = document.querySelector('#container');
+    elem.style.fontSize = '30px';
+    
+    const elemCon = document.querySelector('.hello');
+    elemCon.textContent = '123';
+
+    const newElem = document.createElement('div');
+    elem.appendChild(newElem);
+    document.body.append(newElem);
+
+    let someLog = '345';
+
+    const consoleLog = () => console.log('log');
+    
+    const phoneField = document.querySelector('#phone');
+
+    const myButton = document.querySelector('#myButton');
+    const li = document.querySelector('#list');
+    myButton.addEventListener('click', () => {
+      const newItem = document.createElement('li');
+      newItem.classList.add('item');
+      newItem.textContent = phoneField.value;
+
+      list.appendChild(newItem);
+
+    });
+
+    
+    phoneField.addEventListener('keydown', (event) => console.log(event));
+
+
+
+
+  </script>
+</body>
+</html>
